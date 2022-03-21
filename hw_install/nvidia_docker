@@ -1,0 +1,13 @@
+
+# The installation is based upon https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/install-guide.html#docker
+# yum-config-manager --add-repo=https://download.docker.com/linux/centos/docker-ce.repo
+# yum repolist -v
+# yum install -y https://download.docker.com/linux/centos/7/x86_64/stable/Packages/containerd.io-1.4.3-3.1.el7.x86_64.rpm
+# yum install docker-ce -y
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID) \
+   && curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.repo |tee /etc/yum.repos.d/nvidia-docker.repo
+yum clean expire-cache;
+yum install -y nvidia-docker2;
+systemctl restart docker;
+
+
