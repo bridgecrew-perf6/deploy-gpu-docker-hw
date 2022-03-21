@@ -1,0 +1,5 @@
+./install_aws_cli;
+./install_docker
+./set_aws_conf
+./pull;
+./nvidia_docker;

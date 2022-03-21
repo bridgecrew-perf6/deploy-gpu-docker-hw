@@ -1,0 +1,7 @@
+docker stop ocr_inner;
+docker run --rm --name ocr_inner -d -p 7788:8866 -p 6008:8888 -p 5008:5000 \
+    -e CUDA_VISIBLE_DEVICES=0 \
+    --gpus all \
+    ocr_inner \
+    uvicorn --host 0.0.0.0 --port 5000 --reload app.api:api;
+docker logs -f ocr_inner;

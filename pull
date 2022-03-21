@@ -1,0 +1,4 @@
+TOKEN=$(aws ecr get-login-password --region cn-northwest-1);
+docker login -u AWS -p $TOKEN https://046687694157.dkr.ecr.cn-northwest-1.amazonaws.com.cn
+docker pull 046687694157.dkr.ecr.cn-northwest-1.amazonaws.com.cn/blackops:ocr_inner;
+docker tag 046687694157.dkr.ecr.cn-northwest-1.amazonaws.com.cn/blackops:ocr_inner ocr_inner;

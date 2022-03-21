@@ -1,0 +1,1 @@
+cp -r aws_config /root/.aws
